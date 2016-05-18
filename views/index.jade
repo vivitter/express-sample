@@ -4,10 +4,19 @@ block content
   h1= title
   p Welcome to #{title}
 
+  h2 User List
+  - for (var i=0; i < users.length; i++){
+  li #{users[i].id}
+  - }
+
+  h2 New User Registration
+  
   form(name="sample-form", method="post")
     div.input
-      span.label Title
-      input(type="text", name="title")
-      
+      span.label ID:
+      input(type="text", name="id")
+    div.input
+      span.label PASSWORD:
+      input(type="text", name="password")
     div.actions
-      input(type="submit", value="add")
+      input(type="submit", value="register")
